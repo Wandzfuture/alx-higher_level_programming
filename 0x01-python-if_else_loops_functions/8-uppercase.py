@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """is a function that prints a string in uppercase."""
+
+
 def uppercase(s):
     result = ""
     for c in s:
