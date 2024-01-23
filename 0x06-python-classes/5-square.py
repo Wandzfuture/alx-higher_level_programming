@@ -12,8 +12,6 @@ class Square:
     Methods:
         __init__(self, size=0): Initializes a square with the given size.
         area(self): Calculates and returns the area of the square.
-        size(self): Getter method to retrieve the size of the square.
-        size(self, value): Setter method to set the size of the square.
     """
 
     def __init__(self, size=0):
@@ -25,7 +23,7 @@ class Square:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):

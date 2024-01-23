@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-#101-square.py
+"""Defines a class Square"""
 
 
 class Square:
-    """Represent a square with size and position attributes and methods for area calculation and printing.
+    """
+    Represent a square with size and position attributes and methods for area calculation and printing.
 
     Attributes:
         __size (int): The size of the square.

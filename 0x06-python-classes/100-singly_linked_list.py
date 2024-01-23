@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#100-singly_linked_list.py
+"""Defines a class Node for a singly linked list."""
 
 
 class Node:
@@ -27,6 +27,7 @@ class Node:
             raise TypeError('data must be an integer')
         self.data = data
         self.next_node = next_node
+
 
 class SinglyLinkedList:
     """
