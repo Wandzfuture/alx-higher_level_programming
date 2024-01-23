@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-#4-square.py
+"""Represents a square with a size attribute and methods for area calculation."""
 
 
 class Square:
-    """Represents a square with a size attribute and methods for area calculation.
+    """
+    Represents a square with a size attribute and methods for area calculation.
 
     Attributes:
         __size (int): The size of the square.
@@ -29,7 +30,7 @@ class Square:
     @property
     def size(self):
         """Getter method to retrieve the size of the square."""
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -54,4 +55,4 @@ class Square:
         Returns:
             int: The area of the square (size squared).
         """
-        return self.__size ** 2
+        return (self.__size ** 2)
