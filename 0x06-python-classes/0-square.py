@@ -2,13 +2,5 @@
 
 
 class Square:
-    """
-    This class represents a square.
-
-    Attributes:
-        None
-
-    Methods:
-        None
-    """
+    """ This class represents a square. """
     pass
