@@ -4,7 +4,7 @@
 
 class Square:
     """
-    Represents a square with a size attribute and methods for area calculation.
+    Represents a square with a size attribute and methods for area calculation and printing.
 
     Attributes:
         __size (int): The size of the square.
@@ -12,6 +12,9 @@ class Square:
     Methods:
         __init__(self, size=0): Initializes a square with the given size.
         area(self): Calculates and returns the area of the square.
+        size(self): Getter method to retrieve the size of the square.
+        size(self, value): Setter method to set the size of the square.
+        my_print(self): Prints the square with the character '#' according to its size.
     """
 
     def __init__(self, size=0):
@@ -24,6 +27,14 @@ class Square:
             ValueError: If size is less than 0.
         """
         self.__size = size
+
+    def area(self):
+        """Calculates and returns the area of the square.
+
+        Returns:
+            int: The area of the square (size squared).
+        """
+        return (self.__size ** 2)
 
     @property
     def size(self):
@@ -47,10 +58,9 @@ class Square:
         else:
             self.__size = value
 
-    def area(self):
-        """Calculates and returns the area of the square.
-
-        Returns:
-            int: The area of the square (size squared).
-        """
-        return (self.__size ** 2)
+    def my_print(self):
+        """Prints the square with the character '#' according to its size."""
+        if self.__size == 0:
+            print()
+        for _ in range(self.__size):
+            print("#" * self.__size)
