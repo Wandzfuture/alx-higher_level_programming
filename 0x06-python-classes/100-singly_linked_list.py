@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class Node for a singly linked list."""
+"""Defines a class Square"""
 
 
 class Node:
