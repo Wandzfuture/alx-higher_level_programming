@@ -1,54 +1,47 @@
 #!/usr/bin/python3
 """Defines a class Square"""
 
+
 class Square:
     """
-    Represents a square with a size attribute and methods for area calculation and printing.
+    Class that defines properties of square by: (based on 4-square.py).
 
     Attributes:
-        __size (int): The size of the square.
-
-    Methods:
-        __init__(self, size=0): Initializes a square with the given size.
-        area(self): Calculates and returns the area of the square.
-        size(self): Getter method to retrieve the size of the square.
-        size(self, value): Setter method to set the size of the square.
-        my_print(self): Prints the square with the character '#' according to its size.
+        size: size of a square (1 side).
     """
-
     def __init__(self, size=0):
-        """Initializes a square with the given size.
+        """
+        Creates new instances of square.
 
         Args:
-            size (int): The size of the square (default 0).
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
+            size: size of the square (1 side).
         """
         self.__size = size
 
     def area(self):
-        """Calculates and returns the area of the square.
+        """Calculates the area of square.
 
-        Returns:
-            int: The area of the square (size squared).
+        Returns: the current square area.
         """
-        return (self.__size ** 2)
+        return self.__size ** 2
 
     @property
     def size(self):
-        """Getter method to retrieve the size of the square."""
-        return (self.__size)
+        """
+        Returns the size of a square
+        """
+        return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter method to set the size of the square.
+        """Property setter for size.
 
         Args:
-            value (int): The size of the square.
+            value (int): size of a square (1 side).
+
         Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
+            TypeError: size must be an integer
+            ValueError: size must be >= 0
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -58,8 +51,10 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        """Prints the square with the character '#' according to its size."""
+        """prints in stdout the square with the character #
+        """
+
         if self.__size == 0:
             print()
-        for _ in range(self.__size):
-            print("#" * self.__size)
+        for i in range(self.__size):
+            print("#" * (self.__size))
