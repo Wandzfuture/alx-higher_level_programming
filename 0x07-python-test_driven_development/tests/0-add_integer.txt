@@ -1,0 +1,61 @@
+-----------------------------------------------------
+ Test cases for add_integer function(0-add_integer.py)
+-----------------------------------------------------
+
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+# Test case 1: Adding two positive integers
+>>> add_integer(3, 5)
+8
+
+# Test case 2: Adding a positive integer and a negative integer
+>>> add_integer(3, -5)
+-2
+
+# Test case 3: Adding two negative integers
+>>> add_integer(-3, -5)
+-8
+
+# Test case 4: Adding zero to a positive integer
+>>> add_integer(0, 5)
+5
+
+# Test case 5: Adding zero to a negative integer
+>>> add_integer(0, -5)
+-5
+
+# Test case 6: Adding two floating-point numbers
+>>> add_integer(3.5, 2.5)
+5
+
+# Test case 7: Adding an integer and a floating-point number
+>>> add_integer(3, 2.5)
+5
+
+# Test case 8: Adding a floating-point number and an integer
+>>> add_integer(3.5, 2)
+5
+
+# Test case 9: Adding two large positive integers
+>>> add_integer(1000000000, 2000000000)
+3000000000
+
+# Test case 10: Adding two large negative integers
+>>> add_integer(-1000000000, -2000000000)
+-3000000000
+
+# Test case 11: Adding a large positive integer and a large negative integer
+>>> add_integer(1000000000, -2000000000)
+-1000000000
+
+# Test case 12: Adding two very large positive integers
+>>> add_integer(9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999, 1)
+10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
