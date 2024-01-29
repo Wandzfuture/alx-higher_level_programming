@@ -3,5 +3,6 @@
 """
 
 class Rectangle:
-    """Class that defines properties of rectangle"""
+    """Class that defines properties of rectangle.
+    """
     pass
