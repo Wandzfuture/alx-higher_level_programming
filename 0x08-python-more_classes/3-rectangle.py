@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+"""Defines a Rectangle class.
+"""
 
 
 class Rectangle:
-    """
-    Represents a rectangle.
+    """Represents a rectangle.
 
     Attributes:
         width (int): The width of the rectangle.
@@ -12,8 +12,7 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
-        """
-        Initializes a new Rectangle.
+        """Initializes a new Rectangle.
 
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
