@@ -9,7 +9,7 @@ class Rectangle:
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
-        print_symbol (any): The symbol used for string representation.
+        print_symbol (str or any): The symbol used for string representation.
     """
     number_of_instances = 0
     print_symbol = "#"
