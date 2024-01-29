@@ -4,7 +4,8 @@
 
 
 class Rectangle:
-    """Represents a rectangle.
+    """
+    Class that Represents a rectangle.
 
     Attributes:
         width (int): The width of the rectangle.
