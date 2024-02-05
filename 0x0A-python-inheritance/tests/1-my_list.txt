@@ -1,0 +1,112 @@
+	1-my_list.py
+___________________________________________
+a class MyList that inherits from list
+
+Module Import:
+    >>> MyList = __import__('1-my_list').MyList
+
+
+Function:
+Write a class `MyList` that inherits from `list`:
+
+    * All elements in the list are assumed to be of type `int`.
+
+Section // No Exceptions
+==
+
+Test Case #0: Order a disordered list of positive integers
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Test Case #1: Order a disordered list of positive integers
+
+    >>> my_list = MyList()
+    >>> my_list.append(5)
+    >>> my_list.append(4)
+    >>> my_list.append(3)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [5, 4, 3, 2, 1]
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> print(my_list)
+    [5, 4, 3, 2, 1]
+
+Test Case #2: Empty list test case
+
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+
+    >>> my_list.print_sorted()
+    []
+
+    >>> print(my_list)
+    []
+
+Test Case #3: Do nothing test case
+
+    >>> my_list = MyList()
+    >>> my_list.append(-5)
+    >>> my_list.append(-4)
+    >>> my_list.append(-3)
+    >>> my_list.append(-2)
+    >>> my_list.append(-1)
+    >>> print(my_list)
+    [-5, -4, -3, -2, -1]
+
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1]
+
+    >>> print(my_list)
+    [-5, -4, -3, -2, -1]
+
+Test Case #4: Order a disordered list of negative integers
+
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(-4)
+    >>> my_list.append(-2)
+    >>> my_list.append(-3)
+    >>> my_list.append(-5)
+    >>> print(my_list)
+    [-1, -4, -2, -3, -5]
+
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1]
+
+    >>> print(my_list)
+    [-1, -4, -2, -3, -5]
+
+
+Section // Attribute Errors
+============================
+
+Test Case #5: Invalid test case with tuples
+
+    >>> my_list = (1, 2)
+    >>> print(my_list)
+    (1, 2)
+    
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    AttributeError: 'tuple' object has no attribute 'print_sorted'
+
+    >>> print(my_list)
+    (1, 2)
