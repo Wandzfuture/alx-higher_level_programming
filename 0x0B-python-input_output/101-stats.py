@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Reads from standard input and computes metrics."""
-if __name__ == "__main__":
 import sys
 from collections import defaultdict
 
@@ -33,3 +32,6 @@ def main():
                 print_metrics(total_size, status_counts)
     except KeyboardInterrupt:
         print_metrics(total_size, status_counts)
+
+if __name__ == "__main__":
+    main()
