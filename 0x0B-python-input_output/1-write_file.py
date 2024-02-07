@@ -2,10 +2,14 @@
 """Defines a file-writing function.
 """
 
-def write_file(filename="", text=""):
-    """Write a string to a text file (UTF8)
 
-       return the number of characters written
+def write_file(filename="", text=""):
+    """Write a string to a text file (UTFS)
+    Args:
+        filename: The name of the file to write.
+        text: The text to write to the file.
+    Returns:
+        The number of characters written.
     """
-    with open(filename, mode='w', encoding='utf-8') as file:
-        return file.write(text).
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
