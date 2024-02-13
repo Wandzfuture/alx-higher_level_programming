@@ -2,6 +2,8 @@
 """
 Defines the Base class for all other classes in this project.
 """
+import json
+
 
 class Base:
     """
@@ -14,9 +16,9 @@ class Base:
         """
         Initialize the Base object.
 
-	assigns id it to the public instance attribute id.
+        assigns id it to the public instance attribute id.
         Otherwise, increment __nb_objects and assign the new value
-	to the public instance attribute id.
+        to the public instance attribute id.
         """
         if id is not None:
             self.id = id
@@ -31,11 +33,14 @@ class Base:
 
         **dictionary can be thought of as a double pointer to a dictionary
         To use the update method to assign all attributes, create a "dummy"
-	instance before:
+        instance before:
         Call update instance method to this "dummy" instance.
         **dictionary must be used as **kwargs of the method update
         """
-        dummy = cls(0, 0, 0)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
@@ -48,7 +53,7 @@ class Base:
         The filename must be: <Class name>.json - example: Rectangle.json
         Overwrite the file if it already exists.
         """
-        filename = f"{cls.__name__}.json"
+        filename = "{}.json".format(cls.__name__)
         list_dicts = [obj.to_dictionary() for obj in list_objs]
         json_string = cls.to_json_string(list_dicts)
         with open(filename, "w") as file:
@@ -59,7 +64,7 @@ class Base:
         """
         Return a list of instances from a JSON file.
         """
-        filename = f"{cls.__name__}.json"
+        filename = "{}.json".format(cls.__name__)
         try:
             with open(filename, "r") as file:
                 json_string = file.read()
@@ -68,18 +73,22 @@ class Base:
         except FileNotFoundError:
             return []
 
-    @staticmethod
-    def to_json_string(list_dictionaries):
+    @classmethod
+    def save_to_file(cls, list_objs):
         """
-        Return the JSON string representation of list_dictionaries.
+        Write the JSON representation of list_objs to a file.
 
-        If list_dictionaries is None or empty, return the string: "[]".
-        Otherwise, return JSON string representation of list_dictionaries.
+        If list_objs is None, save an empty list.
+        The filename must be: <Class name>.json - example: Rectangle.json
+        Overwrite the file if it already exists.
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        filename = "{}.json".format(cls.__name__)
+        if list_objs is None:
+            list_objs = []
+        list_dicts = [obj.to_dictionary() for obj in list_objs]
+        json_string = cls.to_json_string(list_dicts)
+        with open(filename, "w") as file:
+            file.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
